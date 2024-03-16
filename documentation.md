@@ -4,14 +4,11 @@
 ### Date: March 16, 2024
 
 # Questions
-1. Write an SQL script (or multiple scripts) to help answer the following:
-What is the Net Revenue per Opted In Count broken down by brand_size from 
-Jan 2023 to Jan 2024? Populate the table below.
+## 1. Write an SQL script (or multiple scripts) to help answer the following: What is the Net Revenue per Opted In Count broken down by brand_size from Jan 2023 to Jan 2024? Populate the table below.
 
 ![img2](files/img2.png)
 
-2. Please briefly outline the steps you took to answer the question
-(Include tools if any)
+## 2. Please briefly outline the steps you took to answer the question (Include tools if any)
 
 ```
 Steps for the extraction of Net Revenue per Opted In
@@ -36,7 +33,7 @@ g. Data Validation through another SQL script just to check if values are
 matching and correct.
 ```
 
-3. What data cleaning & correcting did you do, if any?
+## 3. What data cleaning & correcting did you do, if any?
 
 ```
 a. Dataset 1 (Customer Revenue)
@@ -57,12 +54,32 @@ b. Dataset 2 (Customer Subscriber)
     * generalized naming convention of title headers for better coding
 ```
 
-Check this link for the full data cleaning documentation. Documentations are
+Check this link: [https://github.com/paadde/revenue_analysis](https://github.com/paadde/revenue_analysis) for the full data cleaning documentation. Documentations are
 good practices for data transparency.
 
-4. Please paste or attach the SQL you wrote
+## 4. Please paste or attach the SQL you wrote
 
 ![img1](files/img1.png)
 
-5. Given the SQL below, suggest improvements and highlight any issues you can
-identify:
+## 5. Given the SQL below, suggest improvements and highlight any issues you can identify:
+
+```
+a. Using Common Table Expression (CTE) might help in readability of the script
+
+b. Use of capitalizations in SQL keywords, functions and clauses may also
+improve readability of this SQL script.
+
+c. Make the ALIASES more readable. Using meaningful and descriptive aliases
+also improve readability and maintainability. It may be difficult for someone
+to understand the query if Aliases are set to 'x', 'y', and 'b'. Suggested
+ALIAS would be 'lines', 'invoices', and 'brands'.
+
+d. Nested subquery in the LEFT JOIN clause can be improved for query
+optimization.
+
+LEFT JOIN emotive_brands AS brands ON invoices.customer_id = brands.stripe_id
+
+e. While grouping columns in positional notation (GROUP BY 1, 2, 3, 4) may be
+concise, it may pose readability issues and may be error-prone if columns were
+moved or added.
+```

@@ -80,9 +80,9 @@ WITH monthly_totals AS (
         SUM(net_revenue) AS total_net_revenue,
         SUM(opted_in_count) AS total_opted_in_count
     FROM
-        customer_revenue AS r
+        customer_revenue AS revenue
     JOIN
-        customer_subscriber AS s ON r.brand_id::text = s.brand_id::text AND r.period_end_date = s.snapshot_date
+        customer_subscriber AS subscriber ON revenue.brand_id::text = subscriber.brand_id::text AND revenue.period_end_date = subscriber.snapshot_date
     WHERE
         brand_size IS NOT NULL
     GROUP BY
