@@ -46,7 +46,7 @@ write.csv(customer_revenue, "customer_revenue.csv", row.names = FALSE)
 write.csv(customer_subscriber, "customer_subscriber.csv", row.names = FALSE)
 ```
 
-## Follow-up data cleaning is SQL
+## Follow-up data cleaning in SQL
 ```
 --check the conversion of date type for snapshot_date
 SELECT TO_DATE(snapshot_date, 'MM/DD/YYYY') AS converted_snapshot_date
